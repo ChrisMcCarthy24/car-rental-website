@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Car - Car Rental System</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Calendar Styling -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental System</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Browse Cars</a>
+            <a href="rentals.html">My Rentals</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="reservation-page">
+        <h2>Reserve Your Car</h2>
+        <p>Choose your rental dates and complete your reservation.</p>
+
+        <div class="reservation-layout">
+
+            <!-- Selected Vehicle -->
+            <section class="selected-car">
+                <div class="selected-car-image">
+                    <img id="carImage"
+                         src="images/corolla.png"
+                         alt="Selected rental car">
+                </div>
+
+                <h3 id="carName">Toyota Corolla</h3>
+                <p id="carType">Sedan</p>
+
+                <p class="daily-price">
+                    <span id="dailyRate">$55.00</span> / day
+                </p>
+            </section>
+
+            <!-- Reservation Form -->
+            <section class="booking-panel">
+                <h3>Rental Details</h3>
+
+                <form id="reservationForm">
+
+                    <div class="date-fields">
+                        <div>
+                            <label for="pickupDate">Pickup Date</label>
+                            <input type="text"
+                                   id="pickupDate"
+                                   placeholder="Select pickup date"
+                                   autocomplete="off">
+                        </div>
+
+                        <div>
+                            <label for="returnDate">Return Date</label>
+                            <input type="text"
+                                   id="returnDate"
+                                   placeholder="Select pickup first"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+
+                    <p class="date-hint">
+                        Unavailable rental dates are greyed out
+                        in the calendar.
+                    </p>
+
+                    <label for="customerName">Full Name</label>
+                    <input type="text"
+                           id="customerName"
+                           placeholder="Enter your full name"
+                           required>
+
+                    <label for="customerEmail">Email Address</label>
+                    <input type="email"
+                           id="customerEmail"
+                           placeholder="Enter your email"
+                           required>
+
+                    <!-- Rental Summary -->
+                    <div class="rental-summary">
+                        <h3>Rental Summary</h3>
+
+                        <p id="rentalDays">
+                            Select rental dates
+                        </p>
+
+                        <p class="total-price" id="totalPrice">
+                            Estimated Total: $0.00
+                        </p>
+
+                        <small>
+                            Estimated price before taxes and fees.
+                        </small>
+                    </div>
+
+                    <button type="submit" class="confirm-btn">
+                        Confirm Reservation
+                    </button>
+
+                    <p id="reservationMessage"
+                       role="status"
+                       aria-live="polite"></p>
+
+                    
+                    <a href="rentals.html"
+                    id="viewRentalsBtn"
+                    class="view-rentals-btn"
+                    hidden>
+                    View My Rentals
+                    </a>
+
+
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Calendar Library -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+
+    <!-- Reservation JavaScript -->
+    <script src="js/reservation.js"></script>
+
+</body>
+</html>
