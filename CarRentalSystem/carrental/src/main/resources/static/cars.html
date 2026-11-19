@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cars - Car Rental System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental System</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Browse Cars</a>
+            <a href="rentals.html">My Rentals</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="cars-page">
+        <h2>Browse Available Cars</h2>
+        <p>Find the perfect vehicle for your next trip.</p>
+
+        <!-- Search by Rental Dates -->
+        <div class="date-filters">
+            <div>
+                <label for="searchPickupDate">Pickup Date</label>
+                <input type="date" id="searchPickupDate">
+            </div>
+
+            <div>
+                <label for="searchReturnDate">Return Date</label>
+                <input type="date" id="searchReturnDate">
+            </div>
+        </div>
+
+        <p id="dateMessage" role="status"></p>
+
+        <!-- Search and Filters -->
+        <div class="filters">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search for a car...">
+
+            <select id="typeFilter">
+                <option value="all">All Vehicle Types</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+            </select>
+
+            <select id="priceFilter">
+                <option value="all">Any Price</option>
+                <option value="60">Up to $60/day</option>
+                <option value="80">Up to $80/day</option>
+                <option value="100">Up to $100/day</option>
+            </select>
+        </div>
+
+        <p id="resultsCount">Showing 4 vehicles</p>
+
+        <!-- Available Cars -->
+        <div class="car-container">
+
+            <!-- Toyota Corolla -->
+            <div class="car-card"
+                 data-car-id="corolla"
+                 data-name="Toyota Corolla"
+                 data-type="Sedan"
+                 data-price="55">
+
+                <div class="car-image">
+                    <img src="images/corolla.png"
+                         alt="Toyota Corolla">
+                </div>
+
+                <div class="car-info">
+                    <h3>Toyota Corolla</h3>
+                    <p>Type: Sedan</p>
+                    <p>Seats: 5</p>
+                    <p>Transmission: Automatic</p>
+                    <p class="price">$55 / day</p>
+
+                    <a href="reservation.html?car=corolla"
+                       class="reserve-btn">Reserve Now</a>
+                </div>
+            </div>
+
+            <!-- Honda Civic -->
+            <div class="car-card"
+                 data-car-id="civic"
+                 data-name="Honda Civic"
+                 data-type="Sedan"
+                 data-price="60">
+
+                <div class="car-image">
+                    <img src="images/civic.png"
+                         alt="Honda Civic">
+                </div>
+
+                <div class="car-info">
+                    <h3>Honda Civic</h3>
+                    <p>Type: Sedan</p>
+                    <p>Seats: 5</p>
+                    <p>Transmission: Automatic</p>
+                    <p class="price">$60 / day</p>
+
+                    <a href="reservation.html?car=civic"
+                       class="reserve-btn">Reserve Now</a>
+                </div>
+            </div>
+
+            <!-- Toyota RAV4 -->
+            <div class="car-card"
+                 data-car-id="rav4"
+                 data-name="Toyota RAV4"
+                 data-type="SUV"
+                 data-price="85">
+
+                <div class="car-image">
+                    <img src="images/rav4.png"
+                         alt="Toyota RAV4">
+                </div>
+
+                <div class="car-info">
+                    <h3>Toyota RAV4</h3>
+                    <p>Type: SUV</p>
+                    <p>Seats: 5</p>
+                    <p>Transmission: Automatic</p>
+                    <p class="price">$85 / day</p>
+
+                    <a href="reservation.html?car=rav4"
+                       class="reserve-btn">Reserve Now</a>
+                </div>
+            </div>
+
+            <!-- Ford Escape -->
+            <div class="car-card"
+                 data-car-id="escape"
+                 data-name="Ford Escape"
+                 data-type="SUV"
+                 data-price="90">
+
+                <div class="car-image">
+                    <img src="images/escape.png"
+                         alt="Ford Escape">
+                </div>
+
+                <div class="car-info">
+                    <h3>Ford Escape</h3>
+                    <p>Type: SUV</p>
+                    <p>Seats: 5</p>
+                    <p>Transmission: Automatic</p>
+                    <p class="price">$90 / day</p>
+
+                    <a href="reservation.html?car=escape"
+                       class="reserve-btn">Reserve Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="noResults" hidden>
+            No cars match your search.
+        </p>
+
+    </main>
+
+    <script src="js/cars.js"></script>
+</body>
+</html>

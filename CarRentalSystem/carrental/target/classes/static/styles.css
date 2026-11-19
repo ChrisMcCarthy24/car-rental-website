@@ -1,0 +1,859 @@
+
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #243447;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #66b3ff;
+}
+
+/* Homepage */
+main {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+main h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Browse Cars Button */
+main a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+main a:hover {
+    background-color: #0056b3;
+}
+
+
+/* Browse Cars Page */
+
+main.cars-page {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.cars-page h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cars-page > p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Search and Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.filters input {
+    width: 250px;
+}
+
+/* Car Cards */
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.car-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+
+/* Car Images */
+.car-image {
+    width: 100%;
+    height: 180px;
+    background-color: #f1f4f8;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.car-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+
+.car-info {
+    padding: 20px;
+}
+
+.car-info h3 {
+    font-size: 22px;
+    margin: 0 0 15px;
+}
+
+.cars-page .car-info p {
+    font-size: 15px;
+    color: #666;
+    margin: 8px 0;
+}
+
+.cars-page .car-info .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 20px 0;
+}
+
+/* Reserve Button */
+.cars-page .reserve-btn {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cars-page .reserve-btn:hover {
+    background-color: #0056b3;
+}
+
+#noResults {
+    margin-top: 25px;
+}
+
+
+/* Reservation Page */
+main.reservation-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.reservation-page h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.reservation-page > p {
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* Reservation Layout */
+.reservation-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Selected Vehicle */
+.selected-car {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.selected-car-image {
+    height: 220px;
+    background-color: #f1f4f8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.selected-car h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.reservation-page .selected-car p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.reservation-page .daily-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Reservation Form */
+.booking-panel {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-panel h3 {
+    margin-top: 0;
+}
+
+.booking-panel label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.booking-panel input,
+.booking-panel select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.date-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Rental Summary */
+.rental-summary {
+    background-color: #f1f4f8;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.rental-summary h3 {
+    margin-top: 0;
+}
+
+.reservation-page .rental-summary p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.reservation-page .total-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Confirm Button */
+.confirm-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Reservation Messages */
+.reservation-page #reservationMessage {
+    margin: 15px 0 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+.reservation-page .success {
+    color: green;
+}
+
+.reservation-page .error {
+    color: red;
+}
+
+/* Smaller Screens */
+@media (max-width: 750px) {
+    .reservation-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .date-fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* My Rentals Page */
+main.rentals-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.rentals-page h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.rentals-page > p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.rental-section {
+    margin-top: 35px;
+    text-align: left;
+}
+
+.rental-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Rental Cards */
+.rental-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.rental-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rental-car-image {
+    width: 100%;
+    height: 180px;
+    padding: 15px;
+    object-fit: contain;
+    background-color: #f1f4f8;
+    box-sizing: border-box;
+}
+
+.rental-info {
+    padding: 20px;
+}
+
+.rental-info h4 {
+    font-size: 22px;
+    margin: 0 0 15px;
+}
+
+.rentals-page .rental-info p {
+    font-size: 15px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.rentals-page .rental-info .rental-status {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Cancel Reservation Button */
+.cancel-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #b02a37;
+}
+
+.rentals-page .empty-rentals {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    color: #666;
+    text-align: center;
+    margin: 0;
+}
+
+#rentalMessage {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Admin Dashboard */
+main.admin-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.admin-page h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.admin-page > p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Dashboard Summary */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 18px;
+    margin: 0 0 15px;
+}
+
+.admin-page .stat-card p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+}
+
+/* Admin Sections */
+.admin-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Tables */
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #f1f4f8;
+    font-weight: bold;
+}
+
+.status-available {
+    color: green;
+    font-weight: bold;
+}
+
+.status-unavailable {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Admin Buttons */
+.admin-actions {
+    white-space: nowrap;
+}
+
+.admin-actions button {
+    padding: 8px 12px;
+    margin: 3px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #007bff;
+}
+
+.availability-btn {
+    background-color: #6c757d;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+}
+
+.admin-actions button:hover {
+    opacity: 0.85;
+}
+
+/* Vehicle Form */
+.admin-form {
+    max-width: 600px;
+}
+
+.admin-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.admin-form input:not([type="checkbox"]),
+.admin-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.admin-form .availability-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.admin-form-buttons button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.admin-save-btn {
+    background-color: #007bff;
+}
+
+.admin-secondary-btn {
+    background-color: #6c757d;
+}
+
+#adminMessage {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Responsive Layout */
+@media (max-width: 750px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-section {
+        padding: 15px;
+    }
+
+    .admin-form-buttons {
+        flex-direction: column;
+    }
+}
+
+
+/* Rental Date Calendar */
+.date-hint {
+    font-size: 13px !important;
+    color: #666;
+    margin: 12px 0 20px !important;
+    text-align: left;
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+    background-color: #f1f1f1;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+
+/* Browse Cars Date Search */
+.date-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.date-filters div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.date-filters label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.date-filters input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    min-width: 190px;
+}
+
+.cars-page #dateMessage {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 20px;
+}
+
+
+/* View My Rentals Button */
+.reservation-page .view-rentals-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reservation-page .view-rentals-btn:hover {
+    background-color: #218838;
+}
+
+.reservation-page .view-rentals-btn[hidden] {
+    display: none;
+}
+
+
+/* Remove Individual Rental Button */
+.remove-rental-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.remove-rental-btn:hover {
+    background-color: #b02a37;
+}
+
+/* Clear Past Rentals Button */
+.clear-past-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.clear-past-btn:hover {
+    background-color: #b02a37;
+}
+
+.clear-past-btn[hidden] {
+    display: none;
+}
+
+
+/* Homepage */
+main.home-page {
+    padding: 0;
+    text-align: center;
+}
+
+/* Homepage Background */
+.home-banner {
+    min-height: calc(100vh - 75px);
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.40),
+            rgba(0, 0, 0, 0.40)
+        ),
+        url("images/home-background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Homepage Text */
+.home-banner-content {
+    max-width: 750px;
+}
+
+.home-page .home-banner h2 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.home-page .home-banner p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Browse Cars Button */
+.home-page .home-browse-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.home-page .home-browse-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 750px) {
+    .home-page .home-banner h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* Remove white space at bottom of homepage */
+body:has(.home-page) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main.home-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.home-banner {
+    flex: 1;
+    min-height: 0;
+}

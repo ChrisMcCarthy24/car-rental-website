@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Car Rental System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental System</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Browse Cars</a>
+            <a href="rentals.html">My Rentals</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="admin-page">
+        <h2>Admin Dashboard</h2>
+        <p>Manage vehicles and customer reservations.</p>
+
+        <!-- Dashboard Summary -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>Total Vehicles</h3>
+                <p id="totalVehicles">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Available Vehicles</h3>
+                <p id="availableVehicles">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Reservations</h3>
+                <p id="totalReservations">0</p>
+            </div>
+        </div>
+
+        <p id="adminMessage" role="status"
+           aria-live="polite"></p>
+
+        <!-- Vehicle Management -->
+        <section class="admin-section">
+            <h3>Vehicle Management</h3>
+
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Vehicle</th>
+                            <th>Type</th>
+                            <th>Price / Day</th>
+                            <th>Availability</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vehicleTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Add or Edit Vehicle -->
+        <section class="admin-section">
+            <h3 id="vehicleFormTitle">Add New Vehicle</h3>
+
+            <form id="vehicleForm" class="admin-form">
+                <input type="hidden" id="vehicleId">
+
+                <label for="vehicleName">Vehicle Name</label>
+                <input type="text" id="vehicleName"
+                       placeholder="e.g. Hyundai Elantra" required>
+
+                <label for="vehicleType">Vehicle Type</label>
+                <select id="vehicleType" required>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                </select>
+
+                <label for="vehiclePrice">Price Per Day ($)</label>
+                <input type="number" id="vehiclePrice"
+                       min="1" step="0.01" required>
+
+                <label for="vehicleImage">Image Path</label>
+                <input type="text" id="vehicleImage"
+                       placeholder="images/elantra.png" required>
+
+                <label class="availability-label">
+                    <input type="checkbox" id="vehicleAvailable"
+                           checked>
+                    Available for rent
+                </label>
+
+                <div class="admin-form-buttons">
+                    <button type="submit" class="admin-save-btn">
+                        Save Vehicle
+                    </button>
+
+                    <button type="button" id="cancelEdit"
+                            class="admin-secondary-btn">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Reservations -->
+        <section class="admin-section">
+            <h3>Customer Reservations</h3>
+
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Vehicle</th>
+                            <th>Pickup</th>
+                            <th>Return</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservationTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/admin.js"></script>
+
+
+    <!-- Admin Password Screen -->
+    <style>
+
+/* Admin Password Screen */
+        #adminLogin {
+            position: fixed;
+            top: 75px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #adminLogin[hidden] {
+            display: none;
+        }
+
+        /* Keep navigation visible */
+        header {
+            position: relative;
+            z-index: 10000;
+        }
+
+
+        #adminLogin[hidden] {
+            display: none;
+        }
+
+        .login-box {
+            text-align: center;
+        }
+
+        .login-box input {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #loginError {
+            color: red;
+        }
+    </style>
+
+    <div id="adminLogin">
+        <div class="login-box">
+            <h2>Admin Login</h2>
+            <p>Enter the admin password to continue.</p>
+
+            <form id="loginForm">
+                <input type="password"
+                    id="adminPassword"
+                    placeholder="Enter password"
+                    required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="loginError"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const password =
+                    document.getElementById("adminPassword").value;
+
+                if (password === "1234") {
+                    document.getElementById("adminLogin").hidden = true;
+                } else {
+                    document.getElementById("loginError").textContent =
+                        "Incorrect password.";
+                }
+            });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rentals - Car Rental System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental System</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Browse Cars</a>
+            <a href="rentals.html">My Rentals</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="rentals-page">
+        <h2>My Rentals</h2>
+        <p>View and manage your car rental reservations.</p>
+
+        <p id="rentalMessage" role="status"
+           aria-live="polite"></p>
+
+        <!-- Current Reservations -->
+        <section class="rental-section">
+            <h3>Current & Upcoming Rentals</h3>
+            <div id="activeRentals" class="rental-container">
+            </div>
+        </section>
+
+        <!-- Previous Reservations -->
+        <section class="rental-section">
+            <h3>Previous & Cancelled Rentals</h3>
+            <div id="pastRentals" class="rental-container">
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/rentals.js"></script>
+</body>
+</html>
